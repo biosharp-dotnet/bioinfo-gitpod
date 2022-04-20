@@ -1,8 +1,10 @@
 image: nfcore/gitpod:latest
 
 tasks:
-  - name: Install graphviz
-    init: pip install graphviz
+  # - name: Install java JBR
+  #   init: mamba uninstall -n base openjdk -y
+  # - name: Install graphviz
+  #   init: pip install graphviz
   - name: Install liberica-java-11
     init: wget -q -O - https://download.bell-sw.com/pki/GPG-KEY-bellsoft
     command: sudo apt-key add - && echo "deb [arch=amd64] https://apt.bell-sw.com/ stable main" | sudo tee /etc/apt/sources.list.d/bellsoft.list
