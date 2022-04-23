@@ -41,7 +41,8 @@ tasks:
   - name: Download datasets
     command: |
       bash /workspace/tdrc-gitpod/datasets/download_dataset.sh
-      exit
+      unset JAVA_TOOL_OPTIONS
+      alias conda_activate="source /opt/conda/etc/profile.d/conda.sh; conda activate base"
 
 
 
