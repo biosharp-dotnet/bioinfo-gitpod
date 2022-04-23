@@ -23,8 +23,8 @@ tasks:
   - name: Install utilities
 
     command: |
-      sudo apt install  -y graphviz rclone aria2c
-      brew install tealdeer
+      sudo apt install  -y graphviz aria2c
+      brew install rclone tealdeer
       tldr -u
 
   - name: Download Nextflow
@@ -42,7 +42,7 @@ tasks:
   - name: Download datasets
 
     command: |
-      bash /workspaces/tdrc-gitpod/datasets/download_dataset.sh
+      bash /workspace/tdrc-gitpod/datasets/download_dataset.sh
 
 
 
