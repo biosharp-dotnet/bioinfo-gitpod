@@ -21,28 +21,27 @@ image: rg.nl-ams.scw.cloud/course-containers/tdrc-gitpod:latest
 tasks:
 
   - name: Install utilities
-
     command: |
       sudo apt install  -y graphviz aria2c
       brew install rclone tealdeer
       tldr -u
+      exit
 
   - name: Download Nextflow
     init: |
       echo 'init script' # runs during prebuild
       echo 'start script'
-
     command: |
       curl -s https://get.nextflow.io | bash
       chmod +x nextflow
       sudo mv nextflow /usr/local/bin/
       unset JAVA_TOOL_OPTIONS
-      alias conda_activate=". /opt/conda/etc/profile.d/conda.sh; conda activate base"
+      alias conda_activate="source /opt/conda/etc/profile.d/conda.sh; conda activate base"
 
   - name: Download datasets
-
     command: |
       bash /workspace/tdrc-gitpod/datasets/download_dataset.sh
+      exit
 
 
 
