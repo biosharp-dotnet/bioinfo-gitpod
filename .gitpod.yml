@@ -35,7 +35,7 @@ tasks:
   - name: Download datasets
 
     command: |
-      bash datasets/download_dataset.sh
+      bash /workspaces/tdrc-gitpod/datasets/download_dataset.sh
 
 
 
