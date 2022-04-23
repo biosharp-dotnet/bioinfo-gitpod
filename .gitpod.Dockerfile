@@ -8,7 +8,9 @@ RUN apt-get update \
   sudo \
   git \
   less \
-  wget
+  wget \
+  htop \
+  tree
 
 RUN mkdir -p /workspace/data \
     && chown -R gitpod:gitpod /workspace/data

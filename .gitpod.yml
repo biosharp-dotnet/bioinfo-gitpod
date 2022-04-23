@@ -1,12 +1,12 @@
 #######################
 ## DOCKERFILE-1
 #######################
+#NOTE: This image uses the Jetbrains JVM which is somewhat problematic.
+# image: nfcore/gitpod:latest
 
-image: nfcore/gitpod:latest
-
-tasks:
-  - name: Install graphviz
-    init: pip install graphviz
+# tasks:
+#   - name: Install graphviz
+#     init: pip install graphviz
 
 #######################
 ## DOCKERFILE-2
@@ -15,22 +15,24 @@ tasks:
 # image:
 #   file: .gitpod.Dockerfile
 
-# # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
-# tasks:
-#   - name: Download Nextflow Tutorial
-#     init: |
-#       echo 'init script' # runs during prebuild
-#       echo 'start script'
+image: rg.nl-ams.scw.cloud/course-containers/tdrc-gitpod:latest
 
-#     command: |
-#       curl -s https://get.nextflow.io | bash
-#       chmod +x nextflow
-#       sudo mv nextflow /usr/local/bin/
-#       docker pull nextflow/rnaseq-nf
-#       sudo apt install  -y tree
-#       sudo apt install  -y graphviz
-#       unset JAVA_TOOL_OPTIONS
-#       alias conda_activate=". /opt/conda/etc/profile.d/conda.sh; conda activate base"
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - name: Download Nextflow Tutorial
+    init: |
+      echo 'init script' # runs during prebuild
+      echo 'start script'
+
+    command: |
+      curl -s https://get.nextflow.io | bash
+      chmod +x nextflow
+      sudo mv nextflow /usr/local/bin/
+      docker pull nextflow/rnaseq-nf
+      sudo apt install  -y tree
+      sudo apt install  -y graphviz
+      unset JAVA_TOOL_OPTIONS
+      alias conda_activate=". /opt/conda/etc/profile.d/conda.sh; conda activate base"
 
 vscode:
   extensions:
