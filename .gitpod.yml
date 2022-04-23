@@ -19,7 +19,7 @@ image: rg.nl-ams.scw.cloud/course-containers/tdrc-gitpod:latest
 
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - name: Download Nextflow Tutorial
+  - name: Download Nextflow
     init: |
       echo 'init script' # runs during prebuild
       echo 'start script'
@@ -28,9 +28,16 @@ tasks:
       curl -s https://get.nextflow.io | bash
       chmod +x nextflow
       sudo mv nextflow /usr/local/bin/
-      sudo apt install  -y graphviz
+      sudo apt install  -y graphviz rclone aria2c
       unset JAVA_TOOL_OPTIONS
       alias conda_activate=". /opt/conda/etc/profile.d/conda.sh; conda activate base"
+
+  - name: Download datasets
+
+    command: |
+      bash datasets/download_dataset.sh
+
+
 
 vscode:
   extensions:
