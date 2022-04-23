@@ -2,4 +2,4 @@
 
 set -uex
 
-wget https://cov-lineages.org/assets/data/cluster.fasta $PWD/datasets
+wget https://cov-lineages.org/assets/data/cluster.fasta -P $PWD/datasets/

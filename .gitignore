@@ -3,6 +3,7 @@
 *.log
 tmp/
 
+datasets/*
 work/
 results*
 *.nextflow*
