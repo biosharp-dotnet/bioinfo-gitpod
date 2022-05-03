@@ -177,4 +177,16 @@ $ rm cowpy.out.txt hello_world.txt
 <br/>
 
 
+
+#### Homework
+
+Try to reproduce all the above steps with `cowsay` (the original tool), you can make use of `tldr cowsay` for quick reference. For long reference, you can use `man cowsay`.
+
+You can use system-level package manager `apt` to install `cowsay`
+
+```
+$ apt install cowsay
+```
+
+
 ### CONGRATULATION on concluding an adventure with Linux tools, scripting and `cowpy`!
