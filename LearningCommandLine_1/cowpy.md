@@ -177,4 +177,4 @@ $ rm cowpy.out.txt hello_world.txt
 <br/>
 
 
-### CONGRATULATION on concluding an adventure with Linux tools, scripting and `cowsay`!
+### CONGRATULATION on concluding an adventure with Linux tools, scripting and `cowpy`!
