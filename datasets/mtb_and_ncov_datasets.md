@@ -21,7 +21,7 @@ wget "https://github.com/nf-core/test-datasets/blob/modules/data/genomics/sarsco
 
 # Hands-on creation of `SAM` file, 
 
-1. Create a `conda` environment called `samtools-env`
+### 1. Create a `conda` environment called `samtools-env`
 
 ```
 
@@ -29,7 +29,7 @@ conda create -name samtools-env -channel bioconda -channel conda-forge samtools=
 
 ```
 
-2. Activate the conda environment 
+### 2. Activate the conda environment 
 
 **NOTE:** After activation, your Gitpod terminal sould display `(samtools-env)` 
 
@@ -37,7 +37,7 @@ conda create -name samtools-env -channel bioconda -channel conda-forge samtools=
 $ conda activate samtools-env
 ```
 
-3. Confirm if `samtools` have been installed, it should print some info about the version
+### 3. Confirm if `samtools` have been installed, it should print some info about the version
 
 ```
 $ samtools --version
@@ -47,13 +47,13 @@ Using htslib 1.11
 Copyright (C) 2020 Genome Research Ltd.
 ```
 
-4. Create the `sam` file 
+### 4. Create the `sam` file 
 
 ```
 samtools view -h covid.paired_end.bam -o covid.paired_end.sam
 ```
 
-5. Confirm the contents of the file 
+### 5. Confirm the contents of the file 
 
 ```
 head covid.paired_end.sam
