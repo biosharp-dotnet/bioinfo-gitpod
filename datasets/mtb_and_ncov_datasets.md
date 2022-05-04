@@ -25,7 +25,7 @@ wget "https://github.com/nf-core/test-datasets/blob/modules/data/genomics/sarsco
 
 ```
 
-conda create -name samtools-env -channel bioconda -channel conda-forge samtools=1.11 tabix
+conda create --name samtools-env --channel bioconda --channel conda-forge samtools=1.11 tabix
 
 ```
 
