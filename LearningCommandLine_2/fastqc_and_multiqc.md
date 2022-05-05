@@ -10,7 +10,7 @@ NOTE: This check is necessary, as Gitpod deletes the previous customizations on 
 conda --version
 ```
 
-_If it is NOT available_, then please do the following on the terminal 
+**If it is NOT available**, then please do the following on the terminal 
 
 
 ```
