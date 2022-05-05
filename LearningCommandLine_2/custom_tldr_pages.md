@@ -2,7 +2,7 @@
 
 ### Problem
 
-If you search for a tldr cheatsheet for `fastqc` you'll notice that it doesn't exist
+If you search for a tldr cheatsheet for `multiqc` you'll notice that it doesn't exist
 
 ```
 tldr multiqc
