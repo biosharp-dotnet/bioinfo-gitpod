@@ -2,16 +2,16 @@
 
 ### Problem
 
-If you search for a tldr cheatsheet for `multiqc` you'll notice that it doesn't exist
+If you search for a tldr cheatsheet for `fastqc` you'll notice that it doesn't exist
 
 ```
-tldr multiqc
+tldr fastqc
 ```
 
 The following message will be shown
 
 ```
-Warning: Page `multiqc` not found in cache.
+Warning: Page `fastqc` not found in cache.
 Try updating with `tldr --update`, or submit a pull request to:
 https://github.com/tldr-pages/tldr
 ```
