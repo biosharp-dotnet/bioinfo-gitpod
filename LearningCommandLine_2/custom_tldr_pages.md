@@ -5,7 +5,7 @@
 If you search for a tldr cheatsheet for `fastqc` you'll notice that it doesn't exist
 
 ```
-tldr fastqc
+tldr multiqc
 ```
 
 The following message will be shown
