@@ -17,7 +17,6 @@ You can run nf-core/fetchngs pipeline to download the FASTQ files of 3 samples w
 ```
 ERX5627944
 ERX5627009
-ERX5627671
 ```
 
 **TIP**: 
