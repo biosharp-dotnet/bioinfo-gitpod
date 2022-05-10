@@ -2,6 +2,16 @@
 
 In this session we will design our first bash pipeline script and understand the results of running `fastp` on the quality of `FASTQ` files.
 
+The tool we are going to use for trimming is called `fastp` https://github.com/OpenGene/fastp and the paper is [here](https://doi.org/10.1093/bioinformatics/bty560) 
+
+
+**NOTE**: Please make a flow chart of the activites in this exercise. Understanding things visually is the key to effective scripting (programming). 
+
+We recommend that you 
+- Read through the entire exercise first 
+- Draw a flow-chart
+- Then start executing these commands on the command line
+
 ## 1. Pre-trimming QC analysis
 
 
@@ -9,7 +19,6 @@ In this session we will design our first bash pipeline script and understand the
 
 
 **NOTE**: Before starting this exercise, please close all default terminals on Gitpod and then start a new terminal.
-
 
 To "remind" Gitpod about `conda`, run the following commands on the shell 
 
