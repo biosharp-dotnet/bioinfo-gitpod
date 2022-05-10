@@ -1,12 +1,36 @@
 # TB-profiler
+
 ## Command line interface
 
 [![N|Solid](https://raw.githubusercontent.com/jodyphelan/jodyphelan_github_io_old/master/img/tb-profiler-logo-rectangle.png)](https://github.com/jodyphelan/TBProfiler)
 
 
-
 This tutorial will guide you to install TB-profiler in your GitPod environment and to determine *Mycobacterium tubrculosis* strain types and drug resistance profiles from WGS data using TB-profiler. 
 
+## *Mycobacterium tuberculosis* WGS data to analyse
+
+
+The rest of this tutorial assumes that you have downloaded 3 *Mycobacterium tuberculosis* genomes (raw WGS datasets) analysed in this publication (https://journals.asm.org/doi/full/10.1128/jcm.02362-21?rfr_dat=cr_pub++0pubmed&url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org), the ENA study accession is: PRJEB45389 
+
+You can run nf-core/fetchngs pipeline to download the FASTQ files of 3 samples with the following sample accession numbers: 
+
+```
+ERX5627944
+ERX5627009
+ERX5627671
+```
+
+**TIP**: 
+1) Make a directory inside the 'datasets' directory where you will download the downloaded WGS data. 
+2) Create a text file with a list of the sample accessions before running FetchNGS. You can use `nano`  or another CLI text editor to create a text file, or even use a combination of the `echo` and `cat` commands to create a text file using the `>` to save the output of your constructed code to a text file. 
+
+### nf-core/fetchngs
+
+Refer to the documentation of FetchNGS pipeline: https://nf-co.re/fetchngs/1.5.
+
+```sh
+nextflow run nf-core/fetchngs --input accession_numbers.txt -profile docker
+```
 
 
 ## Installing TB-profiler in your GitPod environment
@@ -21,22 +45,16 @@ conda config --add channels conda-forge
 Next, we will create the Conda environment for TB-profiler
 
 ```bash
-conda create --name tb-profiler tb-profiler
+conda create --name tbprofiler-env tb-profiler
 ```
 Follow the on screen prompts (Press "y" when asked whether you would like to proceed)
 
-- Note that this process may take some time as all the TB-profiler dependencies (other programs and tools) will be downloaded
-
-Once this process has finished, install TB-profiler using conda: 
-
-```bash
-conda install -c bioconda tb-profiler
-```
+**NOTE** This process may take some time as all the TB-profiler dependencies (other programs and tools) will be downloaded
 
 The latest version of TB-profiler is now installed in your GitPod environment. However, you need to activate the Conda environment: 
 
 ```bash
-conda activate tb-profiler
+conda activate tbprofiler-env
 ```
 
 ## Preparing to run TB-profiler
@@ -48,6 +66,7 @@ tb-profiler
 ```
 
 To get information on how to run a specific tool within the TB-profiler pipeline, call TB-profiler, specify the tool, and use the `-h` argument to access the help page; 
+
 (Of course you can also read the online documentation provided on the TB-profiler Github page)
 
 For example, to see how the 'profile' tool of TB-profiler works, run: 
@@ -68,30 +87,6 @@ Change directories (move into) the directory that you have just created:
 ```bash
 cd my_TBP_output_directory
 ```
-##### *Mycobacterium tuberculosis* WGS data to analyse
-
-
-The rest of this tutorial assumes that you have downloaded 3 *Mycobacterium tuberculosis* genomes (raw WGS datasets) analysed in this publication (https://journals.asm.org/doi/full/10.1128/jcm.02362-21?rfr_dat=cr_pub++0pubmed&url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org), the ENA study accession is: PRJEB45389 
-
-You can run nf-core/fetchngs pipeline to download the FASTQ files of 3 samples with the following sample accession numbers: 
-
-- ERX5627944	
-- ERX5627009	
-- ERX5627671	
-
-
-**TIP**: 
-1) Make a directory inside the 'datasets' directory where you will download the downloaded WGS data. 
-2) Create a text file with a list of the sample accessions before running FetchNGS. You can use `nano`  or another CLI text editor to create a text file, or even use a combination of the `echo` and `cat` commands to create a text file using the `>` to save the output of your constructed code to a text file. 
-
-### nf-core FetchNGS
-
-Refer to the documentation of NextFlow FetchNGS: https://nf-co.re/fetchngs/1.5.
-```sh
-nextflow run nf-core/fetchngs --input accession_numbers.txt -profile docker
-```
-
-
 
 
 ## Running TB-profiler on a single isolate
