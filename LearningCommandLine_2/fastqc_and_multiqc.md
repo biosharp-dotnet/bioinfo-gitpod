@@ -2,7 +2,7 @@
 
 ## 1. Generation of the quality reports
 
-### 1.1 (Optional) Make sure that conda is available on your default bash environment
+### 1.1 Make sure that conda is available on your default bash environment
 
 NOTE: This check is necessary, as Gitpod deletes the previous customizations on bash and therefore `bash` **forgets** about `conda`
 
@@ -88,7 +88,7 @@ To view the HTML files, it is necessary to either
 
 **NOTE:** Since Gitpod is a remote environment, we'll choose Option-2.
 
-### 2.1 Run a web server using Python
+### 2.1 Run a web server using Python to visualize HTML files
 
 ```bash
 python -m http.server 8000

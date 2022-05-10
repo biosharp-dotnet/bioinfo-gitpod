@@ -10,6 +10,7 @@ This tutorial will guide you to install TB-profiler in your GitPod environment a
 
 
 ## Installing TB-profiler in your GitPod environment
+
 First we need to configure Conda with the required channels. Run the following commands in your terminal:
 
 ```bash
@@ -18,6 +19,7 @@ conda config --add channels bioconda
 conda config --add channels conda-forge
 ```
 Next, we will create the Conda environment for TB-profiler
+
 ```bash
 conda create --name tb-profiler tb-profiler
 ```
@@ -38,6 +40,7 @@ conda activate tb-profiler
 ```
 
 ## Preparing to run TB-profiler
+
 To get an overview of the usage information for tb-profiler, run: 
 
 ```bash
