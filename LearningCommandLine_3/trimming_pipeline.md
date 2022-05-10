@@ -48,6 +48,9 @@ After this step, you should have the following files in your system
 ```bash
 ERR5987181_1_fastqc.html
 ERR5987181_1_fastqc.zip
+
+ERR5987181_2_fastqc.html
+ERR5987181_2_fastqc.zip
 ```
 
 
@@ -67,6 +70,8 @@ conda create --name fastp-env bioconda::fastp
 
 fastp -i ERR5987181_1.fastq.gz  -o ERR5987181_1.trimmed.fastq.gz 
 
+
+fastp -i ERR5987181_2.fastq.gz  -o ERR5987181_2.trimmed.fastq.gz 
 ```
 
 ### 2.3 Generate the `fastqc` report for these `trimmed` samples
@@ -79,6 +84,9 @@ After this step, you should have the following files in your system
 ```bash
 ERR5987181_1.trimmed_fastqc.zip
 ERR5987181_1.trimmed_fastqc.html
+
+ERR5987181_2.trimmed_fastqc.zip
+ERR5987181_2.trimmed_fastqc.html
 ```
 
 ## 3. Compare the QC results of pre/post trimming analysis using `multiqc`
@@ -95,11 +103,10 @@ multiqc ./
 python -m http.server 8000
 ```
 
-You should see a notification on the bottom-left of the screen for this PORT, `A service is available on port 8000`, click on `Open Browser` and then select the `html` files.
+You should see a notification on the bottom-left of the screen for this PORT, `A service is available on port 8000`, **click** on `Open Browser` and then select the `html` files.
 
 **If you do NOT** see that notification, please navigate to another tab in your browser add `8000` to the beginning of your Gitpod URL, for example `8000-biosharpdotn-tdrcgitpod-ehsr91d5nlc.ws-eu43.gitpod.io/`
 
 ### 3.3 Choose the HTML files from the web server index page
 
 You should now be able to see the generated HTML outputs
-
