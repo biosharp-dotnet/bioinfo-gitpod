@@ -20,11 +20,30 @@ image: rg.nl-ams.scw.cloud/course-containers/tdrc-gitpod:latest
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
 
-  - name: Install utilities
+  - name: Install utilities and setup Singularity
     command: |
       sudo apt install  -y graphviz aria2c
-      brew install rclone tealdeer
+      brew install rclone tealdeer go
       tldr -u
+
+      sudo apt-get update && \
+      sudo apt-get install -y build-essential \
+      libseccomp-dev pkg-config squashfs-tools cryptsetup
+
+      mkdir -p ${GOPATH}/src/github.com/sylabs && \
+      cd ${GOPATH}/src/github.com/sylabs && \
+      git clone https://github.com/sylabs/singularity.git && \
+      cd singularity
+
+      git checkout v3.6.3
+
+      cd ${GOPATH}/src/github.com/sylabs/singularity && \
+      ./mconfig  --without-suid && \
+      cd ./builddir && \
+      make && \
+      sudo make install
+
+
       exit
 
   - name: Download Nextflow
