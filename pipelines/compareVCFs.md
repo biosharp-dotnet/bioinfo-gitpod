@@ -52,7 +52,7 @@ wget  https://nf-core-awsmegatests.s3-eu-west-1.amazonaws.com/viralrecon/results
 
 ```
 
-## Preparing to run TB-profiler
+## Preparing to run vcf-compare
 
 To get an overview of the usage information for `vcf-compare`, run: 
 
@@ -65,3 +65,21 @@ Next, use `vcf-compare` to determine the number of variants that overlap the num
 ```sh
 vcf-compare SAMPLE_47.snpeff.vcf.gz SAMPLE_48.snpeff.vcf.gz > compare_47-48.txt
 ```
+
+Now inspect the the output file (compare_47_48.txt) using the commands that you have learnt to view the contents of files. 
+
+
+You can also summarise only the number of overlapping and unique variants using the following command: 
+
+```sh
+grep ^VN compare_47-48.txt | cut -f 2-
+```
+`grep` is a command similar the "find" function (control + f) in Windows
+`cut` is a command line utility on Unix and Unix-like operating systems which is used to extract sections from each line of input — usually from a file.
+You can further explore the usage of these commands using `tldr`
+
+Try to answer the following questions: 
+- How many variants are shared by the two samples? 
+- How many variants are unique to sample47? 
+- How many variants are unique to sample48?
+- What is the total variant distance between sample47 and sample48? 
