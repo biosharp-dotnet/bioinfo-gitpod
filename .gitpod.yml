@@ -55,6 +55,7 @@ tasks:
       curl -s https://get.nextflow.io | bash
       chmod +x nextflow
       sudo mv nextflow /usr/local/bin/
+      nextflow self-update
       unset JAVA_TOOL_OPTIONS
       echo 'export NXF_EDGE=0' >> $HOME/.bashrc
       echo 'export NXF_VER=22.10.2' >> $HOME/.bashrc
@@ -65,7 +66,7 @@ tasks:
 
   - name: Conda Terminal
     command: | 
-      echo "May the force be with you!"
+      clear
 
   # - name: Download datasets
   #   command: |
