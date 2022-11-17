@@ -15,7 +15,8 @@
 # image:
 #   file: .gitpod.Dockerfile
 
-image: rg.nl-ams.scw.cloud/course-containers/bioinfo-gitpod:latest
+# image: rg.nl-ams.scw.cloud/course-containers/bioinfo-gitpod:latest
+image: chriswyatt/seqeratraining_22.09.7
 
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
@@ -54,6 +55,7 @@ tasks:
       sudo mv nextflow /usr/local/bin/
       unset JAVA_TOOL_OPTIONS
       alias conda_activate="source /opt/conda/etc/profile.d/conda.sh; conda activate base"
+      printf 'alias conda_activate=\"source /opt/conda/etc/profile.d/conda.sh; conda activate base\"'
 
   # - name: Download datasets
   #   command: |
