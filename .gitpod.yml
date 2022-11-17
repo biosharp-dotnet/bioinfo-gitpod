@@ -51,13 +51,13 @@ tasks:
     command: |
       export NXF_EDGE=0
       export NXF_VER=22.10.2
+      echo 'export NXF_EDGE=0' >> $HOME/.bashrc
+      echo 'export NXF_VER=22.10.2' >> $HOME/.bashrc
       curl -s https://get.nextflow.io | bash
       chmod +x nextflow
       sudo mv nextflow /usr/local/bin/
       nextflow self-update
       unset JAVA_TOOL_OPTIONS
-      echo 'export NXF_EDGE=0' >> $HOME/.bashrc
-      echo 'export NXF_VER=22.10.2' >> $HOME/.bashrc
       alias conda_activate="source /opt/conda/etc/profile.d/conda.sh; conda activate base"
       printf 'alias conda_activate=\"source /opt/conda/etc/profile.d/conda.sh; conda activate base\"\n' >> $HOME/.bashrc
       echo 'conda_activate' >> $HOME/.bashrc
