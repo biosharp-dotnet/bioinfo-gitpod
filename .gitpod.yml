@@ -61,6 +61,7 @@ tasks:
       alias conda_activate="source /opt/conda/etc/profile.d/conda.sh; conda activate base"
       printf 'source /opt/conda/etc/profile.d/conda.sh; conda activate base\n' >> $HOME/.bashrc
       printf 'alias conda_activate=\"source /opt/conda/etc/profile.d/conda.sh; conda activate base\"\n' >> $HOME/.bashrc
+      conda_activate
 
   # - name: Download datasets
   #   command: |
