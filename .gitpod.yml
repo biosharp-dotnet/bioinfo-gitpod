@@ -50,12 +50,22 @@ tasks:
       echo 'init script' # runs during prebuild
       echo 'start script'
     command: |
+      export NXF_EDGE=0
+      export NXF_VER=22.10.2
       curl -s https://get.nextflow.io | bash
       chmod +x nextflow
       sudo mv nextflow /usr/local/bin/
       unset JAVA_TOOL_OPTIONS
+      echo 'export NXF_EDGE=0' >> $HOME/.bashrc
+      echo 'export NXF_VER=22.10.2' >> $HOME/.bashrc
       alias conda_activate="source /opt/conda/etc/profile.d/conda.sh; conda activate base"
-      printf 'alias conda_activate=\"source /opt/conda/etc/profile.d/conda.sh; conda activate base\"'
+      printf 'alias conda_activate=\"source /opt/conda/etc/profile.d/conda.sh; conda activate base\"\n' >> $HOME/.bashrc
+      echo 'conda_activate' >> $HOME/.bashrc
+      exit
+
+  - name: Conda Terminal
+    command: | 
+      echo "May the force be with you!"
 
   # - name: Download datasets
   #   command: |
