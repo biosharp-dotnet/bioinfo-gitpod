@@ -2,26 +2,23 @@
 
 In this session we will design our first bash pipeline script and understand the results of running `fastp` on the quality of `FASTQ` files.
 
-The tool we are going to use for trimming is called `fastp` https://github.com/OpenGene/fastp and the paper is [here](https://doi.org/10.1093/bioinformatics/bty560) 
+The tool we are going to use for trimming is called `fastp` <https://github.com/OpenGene/fastp> and the paper is [here](https://doi.org/10.1093/bioinformatics/bty560)
 
+**NOTE**: Please make a flow chart of the activites in this exercise. Understanding things visually is the key to effective scripting (programming).
 
-**NOTE**: Please make a flow chart of the activites in this exercise. Understanding things visually is the key to effective scripting (programming). 
+We recommend that you
 
-We recommend that you 
-- Read through the entire exercise first 
+- Read through the entire exercise first
 - Draw a flow-chart
 - Then start executing these commands on the command line
 
 ## 1. Pre-trimming QC analysis
 
-
 ### 1.1 Setup conda in bash
-
 
 **NOTE**: Before starting this exercise, please close all default terminals on Gitpod and then start a new terminal.
 
-To "remind" Gitpod about `conda`, run the following commands on the shell 
-
+To "remind" Gitpod about `conda`, run the following commands on the shell
 
 ```bash
 conda init bash 
@@ -29,9 +26,7 @@ conda init bash
 exec $SHELL
 ```
 
-
-### 1.2 Download the relevant datasets 
-
+### 1.2 Download the relevant datasets
 
 ```
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR598/001/ERR5987181/ERR5987181_1.fastq.gz
@@ -41,14 +36,11 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR598/001/ERR5987181/ERR5987181_2.fastq
 
 ```
 
-
 ### 1.3 Create a `qc-env` using `conda`
 
 For this exercise, please refer to the content covered as part of `LearningCommandLine_2`
 
-
 ### 1.4 Generate the `fastqc` report for these samples
-
 
 For this exercise, please refer to the content covered as part of `LearningCommandLine_2`
 
@@ -62,16 +54,13 @@ ERR5987181_2_fastqc.html
 ERR5987181_2_fastqc.zip
 ```
 
-
 ## 2. Post-trimming QC analysis
 
 ### 2.1 Create a `fastp-env` using `conda`
 
-
 ```bash
 conda create --name fastp-env bioconda::fastp
 ```
-
 
 ### 2.2 Run fastp on the downloaded samples
 
@@ -84,7 +73,6 @@ fastp -i ERR5987181_2.fastq.gz  -o ERR5987181_2.trimmed.fastq.gz
 ```
 
 ### 2.3 Generate the `fastqc` report for these `trimmed` samples
-
 
 For this exercise, please refer to the content covered as part of `LearningCommandLine_2`
 
@@ -114,7 +102,7 @@ python -m http.server 8000
 
 You should see a notification on the bottom-left of the screen for this PORT, `A service is available on port 8000`, **click** on `Open Browser` and then select the `html` files.
 
-**If you do NOT** see that notification, please navigate to another tab in your browser add `8000` to the beginning of your Gitpod URL, for example `8000-biosharpdotn-tdrcgitpod-ehsr91d5nlc.ws-eu43.gitpod.io/`
+**If you do NOT** see that notification, please navigate to another tab in your browser add `8000` to the beginning of your Gitpod URL, for example `8000-biosharpdotn-bioinfogitpod-ehsr91d5nlc.ws-eu43.gitpod.io/`
 
 ### 3.3 Choose the HTML files from the web server index page
 

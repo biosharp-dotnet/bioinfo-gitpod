@@ -10,8 +10,7 @@ NOTE: This check is necessary, as Gitpod deletes the previous customizations on 
 conda --version
 ```
 
-Please do the following on the terminal 
-
+Please do the following on the terminal
 
 ```
 conda init bash 
@@ -28,7 +27,7 @@ This environment will contain the `fastqc` and `multiqc` tools
 conda create --name qc-env --channel bioconda --channel conda-forge fastqc multiqc
 ```
 
-Then, activate the conda `qc-env` 
+Then, activate the conda `qc-env`
 
 ```bash
 conda activate qc-env
@@ -36,19 +35,17 @@ conda activate qc-env
 
 ### 1.3 Confirm that `fastqc` and `multiqc` are installed
 
-- FastQC 
+- FastQC
 
 ```bash
 fastqc --version
 ```
 
-- MultiQC 
-
+- MultiQC
 
 ```bash
 multiqc --version
 ```
-
 
 ### 1.4 Run `fastqc` on the previously downloaded (test) `FASTQ` files
 
@@ -70,7 +67,6 @@ covid_2_fastqc.html
 covid_2_fastqc.zip
 ```
 
-
 ### 1.5 Run `multiqc` in a folder containing these `fastqc` reports (`zip` and `html` files)
 
 ```
@@ -79,12 +75,11 @@ multiqc ./
 
 ## 2 Visualization of the quality reports i.e. HTML files
 
-To view the HTML files, it is necessary to either 
+To view the HTML files, it is necessary to either
 
 - Option-1: Download the files to **your own local machine** and open them in your browser
 
 - Option-2: Run a program (called `web server`) on a **remote (shared) machine** which knows how to show the HTML file in the browser
-
 
 **NOTE:** Since Gitpod is a remote environment, we'll choose Option-2.
 
@@ -96,8 +91,7 @@ python -m http.server 8000
 
 You should see a notification on the bottom-left of the screen for this PORT, `A service is available on port 8000`, click on `Open Browser` and then select the `html` files.
 
-**If you do NOT** see that notification, please navigate to another tab in your browser add `8000` to the beginning of your Gitpod URL, for example `8000-biosharpdotn-tdrcgitpod-ehsr91d5nlc.ws-eu43.gitpod.io/`
-
+**If you do NOT** see that notification, please navigate to another tab in your browser add `8000` to the beginning of your Gitpod URL, for example `8000-biosharpdotn-bioinfogitpod-ehsr91d5nlc.ws-eu43.gitpod.io/`
 
 ### 2.2 Choose the HTML files from the web server index page
 
