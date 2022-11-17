@@ -59,8 +59,8 @@ tasks:
       nextflow self-update
       unset JAVA_TOOL_OPTIONS
       alias conda_activate="source /opt/conda/etc/profile.d/conda.sh; conda activate base"
+      printf 'source /opt/conda/etc/profile.d/conda.sh; conda activate base\n' >> $HOME/.bashrc
       printf 'alias conda_activate=\"source /opt/conda/etc/profile.d/conda.sh; conda activate base\"\n' >> $HOME/.bashrc
-      echo 'conda_activate' >> $HOME/.bashrc
       exit
 
   - name: Conda Terminal
