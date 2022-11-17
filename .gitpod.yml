@@ -44,7 +44,7 @@ tasks:
   #     sudo make install
   #     exit
 
-  - name: Download Nextflow
+  - name: Nextflow terminal
     init: |
       echo 'init script' # runs during prebuild
       echo 'start script'
@@ -61,11 +61,6 @@ tasks:
       alias conda_activate="source /opt/conda/etc/profile.d/conda.sh; conda activate base"
       printf 'source /opt/conda/etc/profile.d/conda.sh; conda activate base\n' >> $HOME/.bashrc
       printf 'alias conda_activate=\"source /opt/conda/etc/profile.d/conda.sh; conda activate base\"\n' >> $HOME/.bashrc
-      exit
-
-  - name: Conda Terminal
-    command: | 
-      clear
 
   # - name: Download datasets
   #   command: |
