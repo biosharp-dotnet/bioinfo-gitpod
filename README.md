@@ -1,7 +1,7 @@
-# TDRC Gitpod
+# Bioinfo Gitpod
 
 
-Gitpod setup for the workshops at TDRC.
+Gitpod setup for Bioinformatics workshops.
 
 The Gitpod env has been setup with the most important tools for the workshops such as
 
