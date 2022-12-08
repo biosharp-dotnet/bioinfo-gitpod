@@ -48,7 +48,7 @@ conda create --name tbprofiler-env tb-profiler
 
 Follow the on screen prompts (Press "y" when asked whether you would like to proceed)
 
-**NOTE** This process may take some time as all the TB-profiler dependencies (other programs and tools) will be downloaded
+**NOTE** This process may take some time as all the TB-profiler dependencies (other programs and tools) will be downloaded. If it takes a long time, you can replace `conda` with `mamba`.
 
 The latest version of TB-profiler is now installed in your GitPod environment. However, you need to activate the Conda environment:
 
